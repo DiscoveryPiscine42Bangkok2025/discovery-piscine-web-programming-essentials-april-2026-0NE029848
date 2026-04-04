@@ -1,0 +1,15 @@
+
+
+.table {
+    width: 100vw;
+    height: 100vh;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.table-data{
+    border: 1px solid black;
+    text-align: center;
+    padding: 1vw;
+    font-size: clamp(12px, 2vw, 24px);
+}
