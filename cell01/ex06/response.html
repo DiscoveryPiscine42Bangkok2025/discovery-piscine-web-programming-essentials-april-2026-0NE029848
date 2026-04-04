@@ -2,44 +2,51 @@
 <html>
 <head>
 <style>
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  float: left;
+  width: 50%;
+  padding: 50px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 html, body {
-  height: 100%;
   margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
 
 table {
-  width: 100vw;
-  height: 100vh;
-  border-collapse: collapse;
-  table-layout: fixed;
+  width: 100vw;   
+  height: 100vh;  
+  border-collapse: collapse; 
+  table-layout: fixed; 
 }
 
-th, td {
-  border: 1px solid black;
-  text-align: center;
-  padding: 1vw;
-  font-size: clamp(12px, 2vw, 24px);
-}
 </style>
 </head>
 <body>
 
-<table>
-  <tr>
-    <th>1</th>
-    <th>2</th>
-    <th>3</th>
-    <th>4</th>
-    <th>5</th>
-  </tr>
-  <tr>
-    <td>A</td>
-    <td>B</td>
-    <td>C</td>
-    <td>D</td>
-    <td>E</td>
-  </tr>
-</table>
-
-</body>
+  <table>
+    <tr>
+      <td style="background-color:aquamarine; font-family: Impact, sans-serif;">
+        <p>Hello</p>
+      </td>
+      <td style="background-color:coral; font-family: Arial, Helvetica, sans-serif;">
+        <p>World</p>
+      </td>
+    </tr>
+  </table>
+  
+  </body>
+  
 </html>
+
