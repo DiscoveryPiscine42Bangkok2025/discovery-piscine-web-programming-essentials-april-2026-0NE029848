@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+.menu {
+    width: 300px;
+    margin: 40px auto;
+}
+
+.menu-btn {
+    background: #8B0000;
+    color: #fff;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none;
+    background: #fff;
+    margin-top: 5px;
+}
+
+.dropdown div {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown div:hover {
+    background: #f0f0f0;
+}
+
+.menu:hover .dropdown {
+    display: block;
+}
+
+.tag {
+    float: right;
+    font-size: 12px;
+    background: gold;
+    padding: 2px 5px;
+}

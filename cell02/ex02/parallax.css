@@ -1,0 +1,25 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+.parallax1, .parallax2 {
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+    text-align: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.parallax1 {
+    height: 100vh;
+    background-image: url("https://static.wixstatic.com/media/2eabea_5e0b746ccaa247cb927b7ed489c6c7b7~mv2.jpg");
+}
+
+.parallax2 {
+    height: 100vh;
+    background-image: url("https://static.wixstatic.com/media/2eabea_33bcd300e49c46c19a085b79900f980f~mv2.jpg");
+}
