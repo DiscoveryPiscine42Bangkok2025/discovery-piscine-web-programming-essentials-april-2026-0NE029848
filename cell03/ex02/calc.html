@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div>
+            <label>Number</label>
+            <input type="text" id="num1" name="num1">
+        </div>
+        <div>
+            <label>operators</label>
+            <select id="operators" name="operators">
+                <option value="plus">+</option>
+                <option value="minus">-</option>
+                <option value="multiply">*</option>
+                <option value="divided">/</option>
+                <option value="modulo">%</option>
+            </select>
+        </div>
+        <div>
+            <label>Number</label>
+            <input type="text" id="num2" name="num2">
+        </div>
+        <button id="submit">Try me!</button>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+
+            const num1Input = document.getElementById("num1");
+            const num2Input = document.getElementById("num2");
+            const operatorSelect = document.getElementById("operators");
+            const button = document.getElementById("submit");
+
+            button.addEventListener("click", function () {
+
+                const val1 = num1Input.value.trim();
+                const val2 = num2Input.value.trim();
+                const operator = operatorSelect.value;
+
+                // Validate positive integers (>= 0)
+                if (!isValidPositiveInteger(val1) || !isValidPositiveInteger(val2)) {
+                    alert("Error :(");
+                    return;
+                }
+
+                const a = parseInt(val1, 10);
+                const b = parseInt(val2, 10);
+
+                let result;
+
+                // Handle division/modulo by zero
+                if ((operator === "divided" || operator === "modulo") && b === 0) {
+                    alert("It’s over 9000!");
+                    console.log("It’s over 9000!");
+                    return;
+                }
+
+                // Perform calculation
+                switch (operator) {
+                    case "plus":
+                        result = a + b;
+                        break;
+                    case "minus":
+                        result = a - b;
+                        break;
+                    case "multiply":
+                        result = a * b;
+                        break;
+                    case "divided":
+                        result = a / b;
+                        break;
+                    case "modulo":
+                        result = a % b;
+                        break;
+                    default:
+                        alert("Error :(");
+                        return;
+                }
+
+                if (result > 9000) {
+                    alert("It’s over 9000!");
+                    console.log("It’s over 9000!");
+                    return;
+                }
+
+                // Show result
+                alert(result);
+                console.log(result);
+            });
+
+            function isValidPositiveInteger(value) {
+                return /^\d+$/.test(value);
+            }
+
+            // Alert every 30 seconds
+            setInterval(function () {
+                alert("Please, use me...");
+            }, 30000);
+
+            });
+        </script>
+        
+    </body>
+</html>

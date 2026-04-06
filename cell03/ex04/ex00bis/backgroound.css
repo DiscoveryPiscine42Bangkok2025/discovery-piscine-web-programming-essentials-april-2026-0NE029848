@@ -1,0 +1,9 @@
+body {
+    height: 100vh;
+    background-color: #f0f0f0;
+    transition: background-color 0.5s;
+  }
+  
+  button {
+    font-size: 16px;
+  }

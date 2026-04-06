@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <div>
+            <label>Number</label>
+            <input type="text" id="num1" name="num1">
+        </div>
+        <div>
+            <label>operators</label>
+            <select id="operators" name="operators">
+                <option value="plus">+</option>
+                <option value="minus">-</option>
+                <option value="multiply">*</option>
+                <option value="divided">/</option>
+                <option value="modulo">%</option>
+            </select>
+        </div>
+        <div>
+            <label>Number</label>
+            <input type="text" id="num2" name="num2">
+        </div>
+        <button id="submit">Try me!</button>
+
+        <script>
+            $(function () {
+                var $num1 = $('#num1');
+                var $num2 = $('#num2');
+                var $operators = $('#operators');
+                var $button = $('#submit');
+
+                $button.on('click', function () {
+                    var val1 = $.trim($num1.val());
+                    var val2 = $.trim($num2.val());
+                    var operator = $operators.val();
+
+                    if (!isValidPositiveInteger(val1) || !isValidPositiveInteger(val2)) {
+                        alert('Error :(');
+                        return;
+                    }
+
+                    var a = parseInt(val1, 10);
+                    var b = parseInt(val2, 10);
+                    var result;
+
+                    if ((operator === 'divided' || operator === 'modulo') && b === 0) {
+                        alert("It's over 9000!");
+                        console.log("It's over 9000!");
+                        return;
+                    }
+
+                    switch (operator) {
+                        case 'plus':
+                            result = a + b;
+                            break;
+                        case 'minus':
+                            result = a - b;
+                            break;
+                        case 'multiply':
+                            result = a * b;
+                            break;
+                        case 'divided':
+                            result = a / b;
+                            break;
+                        case 'modulo':
+                            result = a % b;
+                            break;
+                        default:
+                            alert('Error :(');
+                            return;
+                    }
+
+                    if (result > 9000) {
+                        alert("It's over 9000!");
+                        console.log("It's over 9000!");
+                        return;
+                    }
+
+                    alert(result);
+                    console.log(result);
+                });
+
+                function isValidPositiveInteger(value) {
+                    return /^\d+$/.test(value);
+                }
+
+                setInterval(function () {
+                    alert('Please, use me...');
+                }, 30000);
+            });
+        </script>
+        
+    </body>
+</html>
