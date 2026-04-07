@@ -1,12 +1,10 @@
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 :root {
-  --bg:         #111111;
-  --card:       #333333;
-  --text-dark:  #ffffff;
-  --text-gray:  #aaaaaa;
-  --border:     #444444;
-  --nav-h:      60px;
+  --bg: #111111;
+  --card: #333333;
+  --text-white: #ffffff;
+  --text-gray: #aaaaaa;
+  --border: #444444;
+  --nav-h: 60px;
 }
 
 html { scroll-behavior: smooth; }
@@ -14,8 +12,7 @@ html { scroll-behavior: smooth; }
 body {
   font-family: 'Inter', sans-serif;
   background: var(--bg);
-  color: var(--text-dark);
-  font-size: 15px;
+  color: var(--text-white);
   line-height: 1.6;
 }
 
@@ -57,11 +54,9 @@ nav {
 
 .nav-links a:hover { color: #fff; }
 
-/* ── HERO ── */
+/* ── HOME ── */
 
-.hero-inner { padding: 60px 24px; }
-
-.hero-photo {
+.pro-img {
   width: 250px;
   height: 250px;
   border-radius: 50%;
@@ -71,7 +66,7 @@ nav {
   border: 3px solid var(--border);
 }
 
-.hero-tag {
+.pro-tag {
   display: inline-block;
   font-size: 15px;
   font-weight: 500;
@@ -84,7 +79,7 @@ nav {
   margin-bottom: 32px;
 }
 
-.hero-name {
+.pro-name {
   font-size: clamp(44px, 7vw, 88px);
   font-weight: 300;
   color: #ffffff;
@@ -93,53 +88,54 @@ nav {
   margin-bottom: 20px;
 }
 
-.hero-sub {
-  color: #bbb;
-  font-size: 15px;
-  max-width: 440px;
-  margin: 0 auto 40px;
-}
 
-.hero-btn {
-  display: inline-block;
-  background: #333333;
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 500;
-  padding: 12px 28px;
-  border-radius: 4px;
-  transition: opacity 0.2s;
-}
-
-.hero-btn:hover { opacity: 0.85; }
-
-/* ── HERO / PROFILE ── */
 #home {
   padding-top: var(--nav-h);
-  
-  /* ── PARALLAX BACKGROUND START ── */
-  /* The linear-gradient creates a dark overlay so text remains readable */
-  background-image: 
-    linear-gradient(rgba(17, 17, 17, 0.85), rgba(17, 17, 17, 0.85)), 
-    url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?w=1600&q=80'); 
-  
-  background-attachment: fixed; /* <--- This creates the parallax effect! */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* ── PARALLAX BACKGROUND END ── */
-  
-  min-height: 1350px;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  background: transparent; 
+  position: relative;
 }
 
+.pro-inner { 
+  padding: 60px 24px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; 
+  overflow: hidden;
+}
+
+.bgvideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(17, 17, 17, 0.7); 
+}
 /* ── SHARED SECTION ── */
 section {
   padding: 80px 0;
+  background: var(--bg);
+  position: relative; 
 }
 
 .container {
@@ -167,26 +163,22 @@ section {
   color: #fff;
 }
 
-/* ── EXPERIENCE LIST & BORDERS ── */
+/* ── SHOWCASE ── */
 .exp-list { 
   display: flex; 
   flex-direction: column; 
-  gap: 0; /* Remove the gap so the items touch each other */
-  border: 1px solid var(--border); /* Adds a border around the whole box */
-  border-radius: 8px; /* Smooths out the outer corners */
-  overflow: hidden; /* Ensures the inside items respect the rounded corners */
+  gap: 0; 
+  border: 1px solid var(--border); 
+  border-radius: 8px; 
+  overflow: hidden; 
 }
 
 .exp-item {
   background: var(--card);
   padding: 28px 32px;
-  border-bottom: 1px solid var(--border); /* Adds the separating line */
+  border-bottom: 1px solid var(--border);
 }
 
-/* Removes the extra border from the very last item so it looks flush */
-.exp-item:last-child {
-  border-bottom: none;
-}
 /* ── SKILLS ── */
 #skills { background: #0d0d0d; }
 
@@ -204,7 +196,7 @@ section {
 .skill-title {
   font-size: 14px;
   font-weight: 600;
-  color: var(--text-dark);
+  color: var(--text-white);
   margin-bottom: 14px;
 }
 
@@ -213,7 +205,7 @@ section {
 .tag {
   font-size: 11px;
   font-weight: 500;
-  color: var(--text-dark);
+  color: var(--text-white);
   background: #444444;
   border: 1px solid #555555;
   padding: 4px 10px;
@@ -244,7 +236,7 @@ section {
 .contact-value {
   font-size: 14px;
   font-weight: 500;
-  color: var(--text-dark);
+  color: var(--text-white);
 }
 
 /* ── FOOTER ── */
@@ -253,7 +245,6 @@ footer {
   border-top: 1px solid #222;
   padding: 24px 40px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -268,14 +259,7 @@ footer p { font-size: 12px; color: #555; }
   padding: 8px 18px;
   border-radius: 4px;
   transition: all 0.2s;
+  
 }
 
 .back-btn:hover { color: #fff; border-color: #666; }
-
-@media (max-width: 640px) {
-  nav { padding: 0 20px; }
-  .container { padding: 0 20px; }
-  .exp-item { grid-template-columns: 1fr; gap: 4px; }
-  .skills-grid { grid-template-columns: 1fr; }
-  footer { flex-direction: column; gap: 16px; text-align: center; }
-}

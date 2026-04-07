@@ -28,7 +28,6 @@
   
     display: flex;
   
-    /* ✅ FIX: center everything */
     justify-content: center;
     align-items: center;
   
@@ -152,12 +151,4 @@
   .cta:hover {
     gap: 16px;
     opacity: 0.7;
-  }
-  
-  .cta-arr {
-    transition: transform 0.3s ease;
-  }
-  
-  .cta:hover .cta-arr {
-    transform: translateX(6px);
   }
