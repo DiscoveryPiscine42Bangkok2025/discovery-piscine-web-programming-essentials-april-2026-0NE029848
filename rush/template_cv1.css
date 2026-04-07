@@ -1,0 +1,324 @@
+:root {
+  --bg: #111111;
+  --card: #333333;
+  --text-white: #ffffff;
+  --text-gray: #aaaaaa;
+  --border: #444444;
+  --nav-h: 60px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text-white);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ── */
+    nav {
+        overflow: hidden;
+        position: fixed; 
+        top: 0;
+        left: 0;
+        transform: translateX(-300px);
+        height: 100vh;
+        width: 400px;
+        transition: all 800ms cubic-bezier(.8, 0, .33, 1);
+        border-radius: 0% 0% 100% 50%;
+        z-index: 2000; 
+        background: transparent; 
+        border-bottom: none; 
+    }
+
+    nav.nav-open {
+        transform: translateX(0px);
+        border-radius: 0% 0% 0% 0%;
+        background: rgba(0, 0, 0, 0.9); 
+    }
+
+    nav .menu-btn {
+        position: absolute;
+        top: 30px; 
+        right: 40px;
+        padding: 0;
+        width: 30px;
+        cursor: pointer;
+        z-index: 2001;
+    }
+
+    nav .menu-btn .line {
+        padding: 0;
+        width: 30px;
+        background: #fff;
+        height: 2px;
+        margin: 5px 0;
+        transition: all 700ms cubic-bezier(.9, 0, .33, 1);
+    }
+
+    /* Animation for the hamburger to "X" */
+    nav .menu-btn .line.line--1.line-cross {
+        transform: rotate(45deg) translateY(10px);
+    }
+    nav .menu-btn .line.line--2.line-fade-out {
+        transform: translate(30px);
+        opacity: 0;
+    }
+    nav .menu-btn .line.line--3.line-cross {
+        transform: rotate(-45deg) translateY(-10px);
+    }
+
+    nav .nav-links {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 1;
+        transition: all 900ms cubic-bezier(.9, 0, .33, 1);
+        list-style: none;
+        padding: 0;
+    }
+ 
+    
+    nav .nav-links li {
+        margin: 20px 0;
+    }
+
+    nav .nav-links a {
+        text-decoration: none;
+        font-family: 'Inter', sans-serif;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        transition: all 1s ease;
+    }
+
+    nav .nav-links a:hover {
+        color: #888;
+        letter-spacing: 2px;
+    }
+
+    /* Ensure the brand name doesn't hide behind the side menu button */
+    .nav-brand-fixed {
+        position: fixed;
+        top: 20px;
+        left: 40px;
+        z-index: 1500;
+        color: #fff;
+        text-decoration: none;
+    }
+/* ── HOME ── */
+
+.pro-img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 24px auto;
+  display: block;
+  border: 3px solid var(--border);
+}
+
+.pro-tag {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #888;
+  border: 3px solid #333;
+  padding: 6px 16px;
+  border-radius: 20px;
+}
+
+.pro-name {
+  font-size: clamp(44px, 7vw, 88px);
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+
+#home {
+  padding-top: var(--nav-h);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: transparent; 
+  position: relative;
+}
+
+.pro-inner { 
+  padding: 60px 20px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; 
+  overflow: hidden;
+}
+
+.bgvideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(17, 17, 17, 0.7); 
+}
+/* ── SHARED SECTION ── */
+section {
+  padding: 80px 0;
+  background: var(--bg);
+  position: relative; 
+  border-radius: 15px;
+  border-top: 1px solid #333;
+    margin-bottom: 10px; 
+
+}
+
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 32px;
+  
+}
+
+.section-header {
+  margin-bottom: 40px;
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* ── SHOWCASE ── */
+.exp-list { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 0; 
+  border: 1px solid var(--border); 
+  border-radius: 8px; 
+  overflow: hidden; 
+}
+
+.exp-item {
+  background: var(--card);
+  padding: 28px 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── SKILLS ── */
+#skills { background: #0d0d0d; }
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.skill-card {
+  background: var(--card);
+  padding: 28px;
+}
+
+.skill-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-white);
+  margin-bottom: 14px;
+}
+
+.tag-list { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.tag {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-white);
+  background: #444444;
+  border: 1px solid #555555;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+/* ── CONTACT ── */
+#contact { background: #111; }
+
+.contact-list { display: flex; flex-direction: column; gap: 2px; }
+
+.contact-row {
+  background: var(--card);
+  padding: 20px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-type {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-gray);
+}
+
+.contact-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-white);
+}
+
+
+
+.btn {
+    font-size: 12px;
+    font-weight: 500;
+    color: #888888;
+    text-decoration: none;
+    border: 1px solid #333;
+    padding: 10px 36px;
+    border-radius: 10px;
+    transition: all 0.2s;
+ 
+  
+  
+}
+
+.btn:hover { color: #fff; border-color: #666; }
