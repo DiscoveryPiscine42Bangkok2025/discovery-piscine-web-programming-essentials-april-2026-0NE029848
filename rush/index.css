@@ -114,25 +114,6 @@ body {
   opacity: 0.8;
 }
 
-.tags {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 40px;
-}
-
-.tag {
-  font-size: 12px;
-  padding: 6px 12px;
-  border: 1px solid #fff;
-  border-radius: 20px;
-  opacity: 0.8;
-  transition: all 0.3s ease;
-}
-
-.tag:hover {
-  background: #fff;
-  color: #000;
-}
 
 /* CTA */
 .cta {
